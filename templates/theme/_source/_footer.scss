@@ -1,0 +1,245 @@
+.mainFooter{
+    @include font-sm;
+    @include fade;
+    margin-top: $gutter3;
+    @include border-top;
+    position: relative;
+    background: var(--white);
+    a{
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+ 
+    &__row{
+        padding-top: $gutter3;
+    }
+    &__column{
+        margin-bottom: $gutter3;
+    }
+    
+    &__title{
+        @include font-r;
+        @include font-medium2;
+        text-transform: uppercase;
+        margin: 0 0 15px 0;
+    }
+    
+    &__slogan{
+        @include font-medium;
+        margin-bottom: $gutter / 2;
+    }
+    &__desc{
+        @include muted;
+
+    }
+    
+    &__logo{
+        margin-bottom: $gutter;
+        @include flexbox;
+        align-items: center;
+        line-height: 1;
+        @include font-medium;
+        @include font-md;
+        color: var(--brand);
+        
+        .logo_dark{
+            display: none;
+        }
+        img{
+            height: 20px;
+            margin-right: $gutter;
+        }
+    }
+    
+    
+    
+    .hoursOpen{
+        margin: $gutter 0 0 0;
+    }
+    
+    .themeSettings{
+        
+    }
+    
+    &__bottom{
+        @include font-sm;
+        @include font-medium;
+        text-align: center;
+        padding: $gutter2 0;
+        background: var(--border-color);
+//        color: $gray-light;
+        & > .container{
+            @include flexbox;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        a{
+//            color: #fff;
+        }
+        
+    }
+    
+
+    &__info{
+        margin: 0 0 $gutter 0;
+    }
+    &__author{
+        @include flexbox;
+        align-items: center;
+        .designer{
+            margin-right: 15px;
+        }
+        .darkMode{
+            margin-left: $gutter;
+        }
+//        margin: 10px 0 0 0;
+    }
+    
+    
+    .contactsList{
+        
+        li{
+            flex-wrap: wrap;
+        }
+        li:not(:last-child){
+            margin: 0 0 20px 0;
+        }
+        .phone2{
+            display: none;
+        }
+    }
+    .socialMediaIcons{
+        margin-top: $gutter;
+    }
+    
+    
+ 
+
+  
+ 
+}
+
+.footerMenu{
+    .menu_item_logo{
+        display: none;
+    }
+    &__list{
+        @include list-style-no;
+        
+        .menu_item{
+            margin-bottom: 3px;
+        }
+        .menu_icon{
+            
+        }
+        .menu_link{
+            &:hover{
+//                text-decoration: underline;
+            }
+        }
+        .menu_item.selected{
+            .menu_link{
+                @include font-medium2;
+                color: var(--brand);
+//                text-decoration: underline;
+            }
+        }
+        
+    }
+}
+
+
+
+.footerUp{
+    &.show{
+        bottom: 20px;
+        @include opacity(1);
+        visibility: visible;
+    }
+    img{
+        width: 10px;
+        transform: rotate(270deg);
+        filter: invert(1);
+    }
+    width: 40px;
+    height: 40px;
+    background-color: var(--black);
+    position: fixed;
+    bottom:0;
+    right:20px;
+    cursor: pointer;
+    @include shadow-light;
+    border-radius: 50%;
+    @include fade;
+    @include flexbox;
+    @include opacity(0);
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+    &:hover{
+        bottom: 30px;
+    }
+}
+
+ 
+ 
+  
+// ----------------------------------------------------------
+// ----------------------------------------------------------
+// --------------------- RESPONSIVE
+// ----------------------------------------------------------
+// ----------------------------------------------------------
+ 
+
+@media (min-width: 578px){
+    
+}
+
+@media (min-width: 768px){
+ 
+    .mainFooter{
+        &__row{
+            @include flexbox;
+            flex-wrap: wrap;
+            margin-right: -$gutter2;
+        }
+        &__column{
+            flex-basis: calc(33.33% - $gutter2);
+            width: calc(33.33% - $gutter2);
+            margin: 0 $gutter2 $gutter2 0;
+        }
+        
+        &__bottom > .container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        &__info{
+            margin: 0;
+        }
+    }
+}
+
+@media (min-width: 992px){
+    
+ 
+   
+    
+}
+
+@media (min-width: 1200px){
+    
+     .mainFooter{
+        &__row{
+            padding-top: 80px;
+        }
+        &__column{
+            margin-bottom: 80px;
+        }
+    }
+  
+    
+}
